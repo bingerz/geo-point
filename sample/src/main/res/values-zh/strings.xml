@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">地理点工具</string>
+    <string name="main_hint">点击地图，判断当前位置是否在中国。</string>
+</resources>

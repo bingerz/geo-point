@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Geo Point</string>
+    <string name="main_hint">Click on the map to determine if the current location is in China.</string>
+</resources>
