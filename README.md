@@ -1,4 +1,4 @@
-# InteriorPoint
+# Geo-Point
 
 A library to determine if the geographic coordinates are within an area.
 Using Ray Casting algorithm to realize the internal and external relations of points and polygons.
@@ -8,7 +8,7 @@ Using Ray Casting algorithm to realize the internal and external relations of po
 ```java
 
     //Determine whether the current latitude and longitude in mainland China
-    boolean result = InteriorPoint.insideChina(latLng.getLatitude(), latLng.getLongitude());
+    boolean result = GeoPoint.insideChina(latLng.getLatitude(), latLng.getLongitude());
 
 ```
 
@@ -21,6 +21,6 @@ Using Ray Casting algorithm to realize the internal and external relations of po
     region.add(vector2);
     region.add(vector3);
 
-    boolean result = InteriorPoint.interiorPoint(region, latLng.getLatitude(), latLng.getLongitude());
+    boolean result = GeoPoint.interiorPoint(region, latLng.getLatitude(), latLng.getLongitude());
 
 ```
