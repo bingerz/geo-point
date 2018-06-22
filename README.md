@@ -21,6 +21,6 @@ Using Ray Casting algorithm to realize the internal and external relations of po
     region.add(vector2);
     region.add(vector3);
 
-    boolean result = GeoPoint.interiorPoint(region, latLng.getLatitude(), latLng.getLongitude());
+    boolean result = GeoPoint.insidePoint(region, latLng.getLatitude(), latLng.getLongitude());
 
 ```
