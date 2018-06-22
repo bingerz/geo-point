@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
                         LatLng latLng = new LatLng(point.getLatitude(), point.getLongitude());
                         boolean result = GeoPoint.insideChina(latLng.getLatitude(), latLng.getLongitude());
                         String text = "Inside China:" + result;
+                        result = GeoPoint.outOfChina(latLng.getLatitude(), latLng.getLongitude());
+                        text = text + "\n" + "OutOf China:" + result;
                         mapboxMap.addMarker(new MarkerOptions()
                                 .position(latLng)
                                 .title(text)
