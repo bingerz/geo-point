@@ -2,7 +2,10 @@ package cn.bingerz.android.geopoint;
 
 import java.util.ArrayList;
 
+import cn.bingerz.android.geopoint.RayCasting.RayCasting;
+import cn.bingerz.android.geopoint.RayCasting.Vector;
 import cn.bingerz.android.geopoint.Region.ChinaMainland;
+import cn.bingerz.android.geopoint.Utils.GeoPointUtil;
 
 /**
  * Created by hanbing on 16/3/18.
@@ -40,5 +43,27 @@ public class GeoPoint {
      */
     public static boolean insidePoint(ArrayList<Vector> region, double latitude, double longitude) {
         return new RayCasting().insidePolygon(latitude, longitude, region);
+    }
+
+    /**
+     * Convert Earth coordinate system(WGS-84) to Mars coordinate system(GCJ-02)
+     */
+    public static GeoCoordinate WGS84ToGCJ02(GeoCoordinate coordinate) {
+        if (coordinate == null) {
+            return null;
+        }
+        double[] result = GeoPointUtil.WGS84ToGCJ02(coordinate.getLatitude(), coordinate.getLongitude());
+        return new GeoCoordinate(result[0], result[1]);
+    }
+
+    /**
+     * Convert Mars coordinate system(GCJ-02) to Earth coordinate system(WGS-84)
+     */
+    public static GeoCoordinate GCJ02ToWGS84(GeoCoordinate coordinate) {
+        if (coordinate == null) {
+            return null;
+        }
+        double[] result = GeoPointUtil.GCJ02ToWGS84(coordinate.getLatitude(), coordinate.getLongitude());
+        return new GeoCoordinate(result[0], result[1]);
     }
 }

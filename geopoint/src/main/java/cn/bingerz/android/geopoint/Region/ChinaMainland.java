@@ -2,7 +2,7 @@ package cn.bingerz.android.geopoint.Region;
 
 import java.util.ArrayList;
 
-import cn.bingerz.android.geopoint.Vector;
+import cn.bingerz.android.geopoint.RayCasting.Vector;
 
 /**
  * Created by hanson on 15/12/2017.

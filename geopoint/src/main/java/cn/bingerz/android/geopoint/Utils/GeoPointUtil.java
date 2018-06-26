@@ -1,6 +1,39 @@
 package cn.bingerz.android.geopoint.Utils;
 
-public class PositionUtil {
+import java.util.List;
+
+import cn.bingerz.android.geopoint.GeoCoordinate;
+
+public class GeoPointUtil {
+
+    /**
+     *  根据输入的地点坐标计算中心点
+     * @param geoCoordinateList
+     * @return
+     */
+    public static GeoCoordinate getCenterPoint(List<GeoCoordinate> geoCoordinateList) {
+        int total = geoCoordinateList.size();
+        double X = 0, Y = 0, Z = 0;
+        for (GeoCoordinate g : geoCoordinateList) {
+            double lat, lon, x, y, z;
+            lat = g.getLatitude() * Math.PI / 180;
+            lon = g.getLongitude() * Math.PI / 180;
+            x = Math.cos(lat) * Math.cos(lon);
+            y = Math.cos(lat) * Math.sin(lon);
+            z = Math.sin(lat);
+            X += x;
+            Y += y;
+            Z += z;
+        }
+
+        X = X / total;
+        Y = Y / total;
+        Z = Z / total;
+        double Lon = Math.atan2(Y, X);
+        double Hyp = Math.sqrt(X * X + Y * Y);
+        double Lat = Math.atan2(Z, Hyp);
+        return new GeoCoordinate(Lat * 180 / Math.PI, Lon * 180 / Math.PI);
+    }
 
     /**
      * Convert Earth coordinate system(WGS-84) to Mars coordinate system(GCJ-02)

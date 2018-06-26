@@ -1,4 +1,4 @@
-package cn.bingerz.android.geopoint;
+package cn.bingerz.android.geopoint.RayCasting;
 
 /**
  * Created by binger on 15/9/23.
