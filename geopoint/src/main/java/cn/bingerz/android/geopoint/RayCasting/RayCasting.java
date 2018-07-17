@@ -1,6 +1,6 @@
 package cn.bingerz.android.geopoint.RayCasting;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by bingerz on 15/9/23.
@@ -11,7 +11,7 @@ public class RayCasting {
 
     public Vector mIntersect;
 
-    public boolean insidePolygon(double lat, double lon, ArrayList<Vector> coordinates) {
+    public boolean insidePolygon(double lat, double lon, List<Vector> coordinates) {
         Double tol = 1E-10;
         Vector target = new Vector(lat, lon);
         return inside(target, coordinates, tol) > 0;
@@ -101,7 +101,7 @@ public class RayCasting {
         return Math.sqrt(vDot(mIntersect, mIntersect));
     }
 
-    public int inside(Vector v, ArrayList<Vector> vectors, double tol) {
+    public int inside(Vector v, List<Vector> vectors, double tol) {
         /* should assert p->n > 1 */
         Vector pv;
         int i, k, crosses, intersectResult;

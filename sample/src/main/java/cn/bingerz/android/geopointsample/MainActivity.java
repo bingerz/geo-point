@@ -16,10 +16,10 @@ import java.util.List;
 
 import cn.bingerz.android.geopoint.GeoCoordinate;
 import cn.bingerz.android.geopoint.GeoPoint;
-import cn.bingerz.android.geopoint.Utils.GeoPointUtil;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     private MapView mMapView;
 
     @Override
@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
             geoCoordinates3.add(gc3);
             geoCoordinates3.add(gc2);
             geoCoordinates3.add(gc1);
-            GeoCoordinate center1 = GeoPointUtil.getCenterPoint(geoCoordinates1);
-            GeoCoordinate center2 = GeoPointUtil.getCenterPoint(geoCoordinates2);
-            GeoCoordinate center3 = GeoPointUtil.getCenterPoint(geoCoordinates3);
+            GeoCoordinate center1 = GeoPoint.getCenterPoint(geoCoordinates1);
+            GeoCoordinate center2 = GeoPoint.getCenterPoint(geoCoordinates2);
+            GeoCoordinate center3 = GeoPoint.getCenterPoint(geoCoordinates3);
             center1 = GeoPoint.GCJ02ToWGS84(center1);
             center2 = GeoPoint.GCJ02ToWGS84(center2);
             center3 = GeoPoint.GCJ02ToWGS84(center3);
