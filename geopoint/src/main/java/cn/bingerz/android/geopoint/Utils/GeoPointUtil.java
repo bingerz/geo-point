@@ -10,7 +10,7 @@ public class GeoPointUtil {
      * lat1, lon1 Start point lat2, lon2 End point el1 Start altitude in meters
      * el2 End altitude in meters
      *
-     * @returns Distance in Meters
+     * @return Distance in Meters
      */
     public static double distance(double lat1, double lon1, double lat2, double lon2,
                                   double el1, double el2) {
