@@ -3,6 +3,13 @@
 A library to determine if the geographic coordinates are within an area.
 Using Ray Casting algorithm to realize the internal and external relations of points and polygons.
 
+## Adding to your project
+You should add this to your dependencies:
+
+```groovy
+implementation 'cn.bingerz.android:geopoint:1.0.5'
+```
+
 ## Code Example 1
 
 ```java
